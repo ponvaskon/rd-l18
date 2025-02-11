@@ -22,7 +22,9 @@ python src/app.py
 5. Use the API: You can use the /generate_content API to generate content. Send a POST request with the following parameters:
 
 genre: The genre of music (e.g., "pop", "rock").
+
 duration: Duration of the music and video in seconds.
+
 video_prompt: Text prompt to generate the video.
 
 Example:
@@ -67,12 +69,16 @@ pip install -r requirements.txt
 
 **Challenges and Solutions:**
 Model Compatibility: The project requires multiple models for generating music and video. We used Meta MusicGen for music and LTX-Video for video generation. Some challenges included ensuring the models work seamlessly together.
+
 Generating Video with the Correct Length: The video duration is controlled based on the number of frames generated for the video. The duration is calculated by multiplying the video length (in seconds) by the number of frames per second (24 fps).
+
 Handling Model Incompatibilities: The code was adjusted to ensure compatibility between the different models (music and video generation). Using Hugging Face models for video generation and Meta MusicGen for audio generation posed no significant issues when proper model loading and parameter settings were handled.
 
 **Future Work:**
 Improvement in Video Quality: Implement higher-resolution video generation models.
+
 Additional Audio Features: Provide options for the user to specify mood, tempo, or instruments in the music generation.
+
 Interactive User Interface: Integrate a frontend for easier user interaction with the system.
 
 
